@@ -1,0 +1,44 @@
+
+
+  <div class="container">
+
+     <div class="row">
+
+        <table class="table">
+
+
+         <thead>
+         <tr>
+           <th>Customer</th>
+           <th>Contact</th>
+           <th>Date</th>
+           <th>Invoice</th>
+           <th> Action</th>
+         </tr>
+         </thead>
+
+       <tr  ng-repeat= "items in showPending.items">
+
+
+                 <td> {{items.name}} </td>
+                 <td> {{items.contact}} </td>
+                 <td> {{items.month}}-{{items.day}}-{{items.year}} </td>
+                 <td> {{ items._id }} </td>
+                <!-- <td>  <input class="form-control" name="id" ng-model="items._id"></td> -->
+
+
+                      <td><a href="/orderdetails/{{ items._id }}">
+                       <button type="button" class="btn btn-default">DETAILS</button>
+                     </a></td>
+
+                     <td>
+                          <input class="form-control" type="hidden" name="id" ng-model="items._id">
+                          <button ng-click="showPending.editStatus(items, items._id);" class="btn btn-primary"> DELIVERED </button> </td>
+
+             </tr>
+         </table>
+
+
+
+
+    </div>  </div>

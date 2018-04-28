@@ -1,0 +1,49 @@
+
+
+<div class="row">
+<div class="product-explain">
+  <div class="col-md-8"> <b>NAME:</b> {{name}} / {{contact}}</div>
+  <div class="col-md-4"> <b>DATE:</b>{{month}}-{{day}}-{{year}}</div>
+  <div class="col-md-12"> <b>ADDRESS:</b>{{address}}</div>
+</div></div>
+
+<br>
+
+<div class="container" >
+<div  class="table-responsive">
+<table class="table">
+
+  <thead>
+  <tr>
+    <th>Quantity</th>
+    <th>Unit</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+  </thead>
+
+
+
+<tr ng-repeat= "List in orderdetailsCtrl.orderArray">
+   <td> {{List.quantity}} </td>
+   <td> {{List.unit}} </td>
+   <td> {{List.productname}} </td>
+   <td> {{List.price}} </td>
+   <td> {{List.price * List.quantity}} </td>
+</tr>
+
+
+<td> </td>
+<td>  </td>
+<td> </td>
+
+<td><b>Total:</b> {{total}}</td>
+
+</table>
+
+
+</div>
+
+</div>

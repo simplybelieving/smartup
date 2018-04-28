@@ -1,0 +1,43 @@
+<div class="page-header">
+
+  <div >
+    <div >
+      <strong>Edit Price?</strong>
+    </div>
+
+
+  <div class="navbar-form">
+    <div class="form-group">
+      <input type="text" class="form-control" name="search" placeholder="Let's Suggest" ng-model="searchKeyword">
+    </div>
+  <button type="button" class="btn btn-default">Suggestion</button>
+  </div>
+
+
+  <div class="container">
+
+      <div class="row">
+       <div  ng-repeat= "items in showItems.items | filter: searchKeyword | pagination:(currentPage-1) * showItems.limit | limitTo: 3">
+
+
+      <div ng-show="searchKeyword">
+          <table class="table">
+              <tr>
+           <td><a href="/productdetails/{{ items._id }}">  {{items.productname}}</a></td>
+           <td>PRICE:{{items.price}}</td>
+           <td> <input class="form-control" type="number" name="price[$index]" ng-model="showItems.items[$index].price">
+                <input class="form-control" type="hidden" name="id" ng-model="items._id"> </td>
+           <td><button ng-click="showItems.editPrice(items, $index, items._id);" class="btn btn-primary">Edit </button> </td>
+
+
+            </tr>
+         </table>
+      </div>
+
+
+    </div>  </div> </div>
+
+
+  </div>
+
+</div>

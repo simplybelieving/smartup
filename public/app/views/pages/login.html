@@ -1,0 +1,37 @@
+
+<div class="inside_bg" >
+
+
+
+<div class="logindesign">
+  <div class="loginmargin">
+      <h6>Login into... Work</h6>
+      <hr />
+      <form ng-submit="authCtrl.doLogin(loginData);">
+
+         <label>Username:</label>
+         <input class="form-control" type="text" name="username" ng-model="authCtrl.loginData.username">
+         </br>
+
+         <label>Password:</label>
+         <input class="form-control" type="password" name="password" ng-model="authCtrl.loginData.password">
+         </br>
+
+         <button class="btn btn-primary" type="submit"> Login </button>
+
+      </form>
+   </div>
+</div>
+
+
+</br>
+<div class="row show-hide-message" ng-show="authCtrl.successMsg">
+  <div class="alert alert-success"><strong>{{ authCtrl.successMsg}}</strong></div>
+</div>
+
+</br>
+<div class="row show-hide-message"  ng-show="authCtrl.errorMsg">
+  <div class="alert alert-danger"><strong>{{ authCtrl.errorMsg}}</strong></div>
+</div>
+
+</div>
