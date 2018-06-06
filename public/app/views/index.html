@@ -30,12 +30,14 @@
     <script type='text/javascript' src="assets/js/loading-bar.js"></script>
 
 
-    <title>Your Everyday Office and School Needs</title>
+    <title>SmartUp Stationary</title>
 
   </head>
 
 
-  <body ng-app="productApp" >
+  <body ng-app="productApp" ng-controller="moreCtrl" >
+
+
 
 
     <nav class = "navbar navbar-default navbar-custom " role = "navigation">
@@ -62,7 +64,9 @@
 
         <li class="nav-item"><a href="/about">CONTACT US</a></li>
         <li class="nav-item"><a href="/stationary">OFFICE SUPPLY</a></li>
-        <li class="nav-item"><a href="/cart">CART  </a></li>
+        <li class="nav-item"><a href="/cart"> CART  <span class="glyphicon glyphicon-shopping-cart"></span>
+          <span class="badge">{{myitems}}</span>
+        </a></li>
 
         <li class="nav-item">
       <form class="form-inline">
