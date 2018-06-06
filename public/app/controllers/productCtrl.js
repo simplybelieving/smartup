@@ -137,13 +137,16 @@ var app = this;
 
    app.shopping = shoppingcart; // show items in view cart.html
 
-
-
    if (!(shoppingcart instanceof Array) || shoppingcart==null) {
          //videos has been corrupted
          var shoppingcart=[];
-
      }
+
+
+     var howmanyitems = shoppingcart.length;
+     $scope.myitems = howmanyitems; //shows how many items in your shoppingcart
+
+
 
    this.arrayEdit = function(shopping, $index){
        var index = $index;
@@ -168,7 +171,7 @@ var app = this;
        shoppingcart.splice($index, 1);
        app.successMsg= true;
        sessionStorage.setItem('shoppingcart', angular.toJson(shoppingcart));
-
+       window.location.reload();
        $timeout(function () {
 
                app.successMsg= false;
@@ -204,7 +207,7 @@ var app = this;
 
    var saveToShoppingCart = function(){
     sessionStorage.setItem('shoppingcart', angular.toJson(shoppingcart));
-
+    window.location.reload();
     $timeout(function () {
 
         app.successMsg= false;
