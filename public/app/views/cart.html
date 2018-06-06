@@ -1,0 +1,116 @@
+
+<div class="container">
+<div  class="table-responsive">
+
+<table class="table">
+
+
+  <thead>
+  <tr>
+    <th>Quantity </th>
+    <th>Unit </th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+  </thead>
+
+<tr  ng-repeat= "cart in moreCtrl.shopping track by $index">
+
+
+    <td> <input class="form-control" type="number" name="quantity[$index]" ng-model="moreCtrl.shopping[$index].quantity"></td>
+    <td>{{cart.unit}}</td>
+    <td>{{cart.productname}} </td>
+    <td> {{cart.price}} </td>
+    <td>  <p>{{ cart.price * cart.quantity}}</p> </td>
+
+  <td>  <button ng-click="moreCtrl.arrayEdit(shopping, $index);" class="btn btn-primary">Saving Edit </button> </td>
+<td>  <button ng-click="moreCtrl.arrayDelete(shopping, $index);" class="btn btn-primary">Delete </button> </td>
+
+</tr>
+
+
+
+</table>
+
+<p>Total: {{ getTotal() }}</p>
+
+</div>
+</div>
+
+ <div class="row show-hide-message"   ng-show="moreCtrl.successMsg">
+
+  <div id="loader"></div>
+
+ </div>
+
+
+
+
+
+ <div class="container">
+
+   <!-- Trigger the modal with a button -->
+   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Confirm</button>
+
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+     <div class="modal-dialog">
+
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Modal Header</h4>
+         </div>
+         <div class="modal-body">
+
+           <form ng-submit="moreCtrl.sendArray(customer);">
+
+              <label>Customer Name:</label>
+              <input class="form-control" type="text" name="name" ng-model="moreCtrl.customer.name">
+              </br>
+
+              <label>Mobile Number:</label>
+              <input class="form-control" type="text" name="contact" ng-model="moreCtrl.customer.contact">
+              </br>
+
+              <label>Address:</label>
+              <input class="form-control" type="text" name="address" ng-model="moreCtrl.customer.address">
+              </br>
+
+              <label>Email:</label>
+              <input class="form-control" type="text" name="email" ng-model="moreCtrl.customer.email">
+              </br>
+
+
+              <button class="btn btn-primary" type="submit"> Register </button>
+
+           </form>
+
+         </br>
+         <div class="row show-hide-message" ng-show="moreCtrl.successMsg">
+           <div class="alert alert-success"><strong>{{ moreCtrl.successMsg}}</strong></div>
+         </div>
+
+         </br>
+         <div class="row show-hide-message"  ng-show="moreCtrl.errorMsg">
+           <div class="alert alert-danger">{{ moreCtrl.errorMsg}}</div>
+         </div>
+
+         </div>
+
+
+
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+
+
+       </div>
+
+     </div>
+   </div>
+
+ </div>
