@@ -205,16 +205,21 @@ router.get('/morecatalogue/:currentPage/:type', function(req, res){
 
 
   router.get('/searchlist/:id', function(req, res) {
-
+       var checkspace = "true";
        var idcheck = req.params.id; // Assign the _id from parameters to variable
 
-       if(mongoose.Types.ObjectId.isValid(idcheck)) {
+       if (/^[0-9A-Za-z]+$/.test(idcheck))
+     { checkspace = "false";
+         //there are only alphanumeric characters; check if there's spacebar or no. if none, checspace==false
+     }
+
+       if(mongoose.Types.ObjectId.isValid(idcheck) && checkspace=="false") {
                  model.Product.find( { _id : idcheck }, function(err, product) {
 
                     res.json({ product: product }); }
                )} else{
 
-
+   decodeURI(idcheck);
    model.Product.find({productname:{$regex: idcheck ,$options:"$i"}}, function(err, product){
       res.json({ product: product });
     });
