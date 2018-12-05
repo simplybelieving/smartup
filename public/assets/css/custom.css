@@ -3,11 +3,6 @@
     vertical-align:middle;
 }
 
-.jumbotron{
-   position: fixed;
-   background-image: url('pen.png');
-}
-
 #loader {
 margin: auto;
 position: fixed;
