@@ -3,19 +3,10 @@
     vertical-align:middle;
 }
 
-.bg {
-    /* The image used */
-    background-image: url("a.jpg");
-
-    /* Full height */
-    height: 50%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.jumbotron{
+   position: fixed;
+   background-image: url('pen.png');
 }
-
 
 #loader {
 margin: auto;
