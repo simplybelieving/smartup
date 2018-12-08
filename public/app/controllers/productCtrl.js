@@ -80,7 +80,10 @@ var app = this;
    $scope.Desc5 =data.data.items[4].description;
    $scope.Home6 =data.data.items[5].imagePath;
    $scope.Desc6 =data.data.items[5].description;
-
+   $scope.Home7 =data.data.items[6].imagePath;
+   $scope.Desc7 =data.data.items[6].description;
+   $scope.Home8 =data.data.items[7].imagePath;
+   $scope.Desc8 =data.data.items[7].description;
    });
 
    Product.getHome(); // Invoke function to get users from databases
