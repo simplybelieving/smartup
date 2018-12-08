@@ -3,6 +3,27 @@
     vertical-align:middle;
 }
 
+
+.my_hometextsub
+{
+              font-family:    Arial;
+              font-size:      15px;
+}
+.my_hometext
+{
+              font-family:    Arial;
+              font-size:      20px;
+              font-weight:    bold;
+}
+
+.homequote
+{
+              font-family:    Arial;
+              font-size:      25px; color:red;
+              font-weight:    bold; font-style: italic;
+}
+
+
 #loader {
 margin: auto;
 position: fixed;
