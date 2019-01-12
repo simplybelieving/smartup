@@ -2,8 +2,6 @@
     background-color: red;
     vertical-align:middle;
 }
-
-
 .my_hometextsub
 {
               font-family:    Arial;
@@ -16,9 +14,16 @@
               font-weight:    bold;
 }
 
+.footer{
+padding: .875rem 0; text-align: center;
+font-size: .75rem;
+color: #fff;
+background-color: #ff8080;
+}
+
 .homequote
 {
-              font-family:    Arial;
+              font-family:    Arial; text-align: center;
               font-size:      25px; color:red;
               font-weight:    bold; font-style: italic;
 }
