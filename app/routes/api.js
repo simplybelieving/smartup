@@ -10,28 +10,28 @@ module.exports = function(router){
 
 
 
+
   router.post('/feedbackSection', function(req, res){
-  var feedback = new model.Feedback();
+  var feedback = new model.Feedback();  var product = new model.Product();
   var words =req.body.words;
   feedback.words = req.body.words;
   feedback._productname = req.body._productname;
   var idcheck=req.body._productname;
 
 
-
-       model.Product.findOne({productname:{$regex: idcheck ,$options:"$i"}}).populate('commentArray').exec(function (err, product) {
-
          feedback.save(function(err) {
-         product.commentArray.push(feedback);
-         product.save(function(err) {
+        // product.commentArray.push(feedback._id);
+         console.log("I AM THE ID: "+feedback._id);
+         model.Product.update( { productname : idcheck },{ $push: { commentArray: feedback._id } }).exec(function(err, product){
+              res.json({ product: product });
          });
+
+
          });
-       res.json({ product: product });
-         });
+
 
 
 });
-
 
   router.post('/products', function(req, res){
 
